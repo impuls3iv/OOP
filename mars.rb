@@ -1,5 +1,8 @@
  class Rover #define rover as a class
 
+  attr_accessor :xloc, :yloc, :direct, :grid_size_x, :grid_size_y
+
+  #collects original info about position, direction, and grid size
   def initialize(xloc, yloc, direct, grid_size_x, grid_size_y) #initialize rover with position information
     @xloc = xloc #initial rover x position
     @yloc = yloc #initial rover y position
@@ -9,7 +12,15 @@
   end
 
   def location #where the rover is
-    "rover is at #{@xloc}, #{@yloc} on a grid of "
+
+    #checks to see if rover is on grid
+    if @xloc > @grid_size_x || @yloc > @grid_size_y
+      "You put your rover off the grid"
+    else #if rover is on grid, give coordinates
+      "rover is at #{@xloc}, #{@yloc} on a grid of "
+    end
+
+
   end
 
   def heading #which way the rover faces
