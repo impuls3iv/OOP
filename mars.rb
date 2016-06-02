@@ -39,9 +39,36 @@
     else
       puts "I think something went wrong here..."
     end
-
   end
   #--------end move method
+
+
+  #reassigns rotation state
+  def rotator(rotate)
+    if rotate == "L"
+      case rotate
+      when @direct == "N"
+        @direct = "W"
+      when @direct == "W"
+        @direct = "S"
+      when @direct == "S"
+        @direct = "E"
+      when @direct == "E"
+        @direct = "N"
+      end #end L case
+    elsif rotate == "R"
+      case rotate
+      when @direct == "N"
+        @direct = "E"
+      when @direct == "E"
+        @direct = "S"
+      when @direct == "S"
+        @direct = "W"
+      when @direct == "W"
+        @direct = "N"
+      end #end L case
+    end
+  end
 
 end
 
