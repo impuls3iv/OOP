@@ -1,7 +1,12 @@
 class Person
-  attr_accessor :name
+  attr_accessor :f_name, :l_name
+
+  def initialize(f_name, l_name)
+    @first_name = f_name
+    @last_name = l_name
+  end
   def greet
-    "Hi my name is #{name}"
+    "Hi my name is #{@first_name} #{@last_name}"
   end
 end
 
@@ -21,10 +26,6 @@ end
 # bob.name = "bob"
 # puts bob.name
 # puts bob.teach
-chris = Instructor.new
-chris.name = "Chris"
-puts chris.greet
-christina = Student.new
-puts christina.greet
-puts chris.teach
-puts christina.learn
+#chris = Instructor.new('chris', 'jones')
+
+#puts chris.greet
