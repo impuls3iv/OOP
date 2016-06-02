@@ -45,29 +45,49 @@
 
   #reassigns rotation state
   def rotator(rotate)
-    if rotate == "L"
-      case rotate
-      when @direct == "N"
-        @direct = "W"
-      when @direct == "W"
-        @direct = "S"
-      when @direct == "S"
-        @direct = "E"
-      when @direct == "E"
-        @direct = "N"
-      end #end L case
-    elsif rotate == "R"
-      case rotate
-      when @direct == "N"
-        @direct = "E"
-      when @direct == "E"
-        @direct = "S"
-      when @direct == "S"
-        @direct = "W"
-      when @direct == "W"
-        @direct = "N"
-      end #end L case
+
+    #rotating left
+    if rotate == "L" && @direct == "N"
+      @direct = "W"
+    elsif rotate == "L" && @direct == "W"
+      @direct = "S"
+    elsif rotate == "L" && @direct == "S"
+      @direct = "E"
+    elsif rotate == "L" && @direct == "E"
+      @direct = "N"
     end
+
+    #rotating right
+    if rotate == "R" && @direct == "N"
+      @direct = "E"
+    elsif rotate == "R" && @direct == "E"
+      @direct = "S"
+    elsif rotate == "R" && @direct == "S"
+      @direct = "W"
+    elsif rotate == "R" && @direct == "W"
+      @direct = "N"
+    end
+      #case rotate
+      #when @direct == "N"
+      #  @direct = "W"
+      # when @direct == "W"
+      #   @direct = "S"
+      # when @direct == "S"
+      #   @direct = "E"
+      # when @direct == "E"
+      #   @direct = "N"
+    #   # end #end L case
+    # elsif rotate == "R"
+    #   case rotate
+    #   when @direct == "N"
+    #     @direct = "E"
+    #   when @direct == "E"
+    #     @direct = "S"
+    #   when @direct == "S"
+    #     @direct = "W"
+    #   when @direct == "W"
+    #     @direct = "N"
+    #   end #end L case
   end
 
 end
