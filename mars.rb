@@ -18,15 +18,15 @@
 
 end
 
-puts "Define the maxX of grid (initial is 0, 0)"
-maxX = gets.chomp!
-puts "Define the maxY of grid (initial is 0, 0)"
-maxY = gets.chomp!
-puts "What is the starting xlocation of rover"
-start_xloc = gets.chomp!
-puts "What is the starting ylocation of rover"
-start_yloc = gets.chomp!
-puts "What is the initial direction of rover N E S W"
-start_direction = gets.chomp!
+# puts "Define the maxX of grid (initial is 0, 0)"
+# maxX = gets.chomp!
+# puts "Define the maxY of grid (initial is 0, 0)"
+# maxY = gets.chomp!
+# puts "What is the starting xlocation of rover"
+# start_xloc = gets.chomp!
+# puts "What is the starting ylocation of rover"
+# start_yloc = gets.chomp!
+# puts "What is the initial direction of rover N E S W"
+# start_direction = gets.chomp!
 
 #rovey = Rover.new(start_xloc, start_yloc, start_direction)
