@@ -11,21 +11,37 @@
     @grid_size_y = grid_size_y #define maxY of grid
   end
 
-  def location #where the rover is
-
+  #provides info on where rover is and checks to see if on grid
+  def location
     #checks to see if rover is on grid
     if @xloc > @grid_size_x || @yloc > @grid_size_y
       "You put your rover off the grid"
     else #if rover is on grid, give coordinates
-      "rover is at #{@xloc}, #{@yloc} on a grid of "
+      "rover is at #{@xloc}, #{@yloc} on a grid of #{@grid_size_x} by #{@grid_size_y}"
     end
-
-
   end
 
   def heading #which way the rover faces
     "rover is pointed #{@direct}"
   end
+
+  #Method for moving rover M is move forward 1 point, L R are rotate 90 degrees
+  def move(movement_of_rover)
+
+    if movement_of_rover == "M" && @direct == "N" #increase Y by 1 is input is M and position is N
+      @yloc += 1
+    elsif movement_of_rover == "M" && @direct == "S" #decrease Y by 1 is input is M and position is S
+      @yloc -= 1
+    elsif movement_of_rover == "M" && @direct == "E" #increase X by 1 is input is M and position is E
+      @xloc += 1
+    elsif movement_of_rover == "M" && @direct == "W" #dncrease Y by 1 is input is M and position is W
+      @xloc -= 1
+    else
+      puts "I think something went wrong here..."
+    end
+
+  end
+  #--------end move method
 
 end
 
