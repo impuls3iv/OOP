@@ -67,40 +67,27 @@
     elsif rotate == "R" && @direct == "W"
       @direct = "N"
     end
-      #case rotate
-      #when @direct == "N"
-      #  @direct = "W"
-      # when @direct == "W"
-      #   @direct = "S"
-      # when @direct == "S"
-      #   @direct = "E"
-      # when @direct == "E"
-      #   @direct = "N"
-    #   # end #end L case
-    # elsif rotate == "R"
-    #   case rotate
-    #   when @direct == "N"
-    #     @direct = "E"
-    #   when @direct == "E"
-    #     @direct = "S"
-    #   when @direct == "S"
-    #     @direct = "W"
-    #   when @direct == "W"
-    #     @direct = "N"
-    #   end #end L case
   end
 
 end
 
-# puts "Define the maxX of grid (initial is 0, 0)"
-# maxX = gets.chomp!
-# puts "Define the maxY of grid (initial is 0, 0)"
-# maxY = gets.chomp!
-# puts "What is the starting xlocation of rover"
-# start_xloc = gets.chomp!
-# puts "What is the starting ylocation of rover"
-# start_yloc = gets.chomp!
-# puts "What is the initial direction of rover N E S W"
-# start_direction = gets.chomp!
+puts "Rover starting X val"
+start_x = gets.chomp!.to_i
+puts "Rovers starting Y val"
+start_y = gets.chomp!.to_i
+puts "Rovers initial direction"
+direction = gets.chomp!
+puts "Map X size"
+mapX = gets.chomp!.to_i
+puts "Map Y size"
+mapY = gets.chomp!.to_i
 
-#rovey = Rover.new(start_xloc, start_yloc, start_direction)
+rover = Rover.new(start_x, start_y, direction, mapX, mapY)
+puts rover.location
+puts rover.heading
+
+puts "Which way do you want to turn?"
+rotation_direct = gets.chomp!
+
+  rover.rotator(rotation_direct)
+  puts rover.heading
