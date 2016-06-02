@@ -71,23 +71,33 @@
 
 end
 
-puts "Rover starting X val"
-start_x = gets.chomp!.to_i
-puts "Rovers starting Y val"
-start_y = gets.chomp!.to_i
-puts "Rovers initial direction"
-direction = gets.chomp!
-puts "Map X size"
-mapX = gets.chomp!.to_i
-puts "Map Y size"
-mapY = gets.chomp!.to_i
+#ask for plateu size, add to array, and load into initialize variables
+puts "What is your plateu size in (X Y)"
+mapXY = gets.chomp!
+my_arr = mapXY.split(' ')
+grid_size_x = my_arr[0].to_i
+grid_size_y = my_arr[1].to_i
 
-rover = Rover.new(start_x, start_y, direction, mapX, mapY)
-puts rover.location
-puts rover.heading
 
-puts "Which way do you want to turn?"
-rotation_direct = gets.chomp!
+# puts "Map X size"
+# mapX = gets.chomp!.to_i
+# puts "Map Y size"
+# mapY = gets.chomp!.to_i
 
-  rover.rotator(rotation_direct)
-  puts rover.heading
+#
+# puts "Rover starting X val"
+# start_x = gets.chomp!.to_i
+# puts "Rovers starting Y val"
+# start_y = gets.chomp!.to_i
+# puts "Rovers initial direction"
+# direction = gets.chomp!
+#
+#
+# rover = Rover.new(start_x, start_y, direction, mapX, mapY)
+# puts rover.location
+# puts rover.heading
+#
+# puts "Which way do you want to turn?"
+# rotation_direct = gets.chomp!
+# rover.rotator(rotation_direct)
+# puts rover.heading
