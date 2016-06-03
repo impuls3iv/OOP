@@ -67,6 +67,9 @@
     elsif rotate == "R" && @direct == "W"
       @direct = "N"
     end
+
+    puts "Rovey is facing #{rotate}"
+
   end
 
 end
@@ -91,6 +94,13 @@ rovey = Rover.new(xloc, yloc, direct, grid_size_x, grid_size_y)
 puts rovey.location
 puts rovey.heading
 
+#the loop to get user input to move rovey
+rov_input = nil
+while rov_input != "end"
+  puts "Choose a direction N E S W -> Type \'end\' to quit"
+  rov_input = gets.chomp!
+  puts rovey.rotator(rov_input)
+end
 
 # puts "Map X size"
 # mapX = gets.chomp!.to_i
