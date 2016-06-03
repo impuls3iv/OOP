@@ -78,6 +78,19 @@ my_arr = mapXY.split(' ')
 grid_size_x = my_arr[0].to_i
 grid_size_y = my_arr[1].to_i
 
+puts "What is the starting position of Rovey the Rover (X Y)"
+locXY = gets.chomp!
+loc_arr = locXY.split(' ')
+xloc = loc_arr[0].to_i
+yloc = loc_arr[1].to_i
+
+puts "Define Rovey's initial direction (N E S W)"
+direct = gets.chomp!
+
+rovey = Rover.new(xloc, yloc, direct, grid_size_x, grid_size_y)
+puts rovey.location
+puts rovey.heading
+
 
 # puts "Map X size"
 # mapX = gets.chomp!.to_i
