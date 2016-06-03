@@ -39,6 +39,7 @@
     else
       puts "I think something went wrong here..."
     end
+    puts "Rovey is now at #{xloc} : #{yloc}"
   end
   #--------end move method
 
