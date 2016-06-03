@@ -68,7 +68,7 @@
       @direct = "N"
     end
 
-    puts "Rovey is facing #{rotate}"
+    puts "Rovey is facing #{@direct}" #changed from 'rotate' to @direct
 
   end
 
@@ -97,9 +97,15 @@ puts rovey.heading
 #the loop to get user input to move rovey
 rov_input = nil
 while rov_input != "end"
-  puts "Choose a direction N E S W -> Type \'end\' to quit"
+  puts "Choose a direction or movement M L or R -> Type \'end\' to quit"
   rov_input = gets.chomp!
-  puts rovey.rotator(rov_input)
+  if rov_input == "L" || rov_input == "R"
+    puts rovey.rotator(rov_input)
+  elsif rov_input == "M"
+    puts rovey.move(rov_input)
+  else
+      puts "Thats not a command. Type \'end\' to quit"
+  end
 end
 
 # puts "Map X size"
