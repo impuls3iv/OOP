@@ -82,6 +82,7 @@ my_arr = mapXY.split(' ')
 grid_size_x = my_arr[0].to_i
 grid_size_y = my_arr[1].to_i
 
+#get initializing variable for first rover
 puts "What is the starting position of Rovey the Rover (X Y)"
 locXY = gets.chomp!
 loc_arr = locXY.split(' ')
@@ -91,22 +92,43 @@ yloc = loc_arr[1].to_i
 puts "Define Rovey's initial direction (N E S W)"
 direct = gets.chomp!
 
+
+#get initializing info for second rover
+puts "What is the starting position of Jonny the Rover (X Y)"
+locXY2 = gets.chomp!
+loc_arr2 = locXY2.split(' ')
+xloc2 = loc_arr2[0].to_i
+yloc2 = loc_arr2[1].to_i
+
+puts "Define Jonny's initial direction (N E S W)"
+direct2 = gets.chomp!
+
+#instantiate first rover
 rovey = Rover.new(xloc, yloc, direct, grid_size_x, grid_size_y)
 puts rovey.location
 puts rovey.heading
 
+#instantiate second rover
+jonny = Rover.new(xloc2, yloc2, direct2, grid_size_x, grid_size_y)
+puts jonny.location
+puts jonny.heading
+
 #the loop to get user input to move rovey
 rov_input_arr = []
+rov_input_arr2 = []
 while rov_input_arr != "end"
-  puts "Choose a direction or movement M L or R"
+  puts "Choose a direction or movement M L or R for Rovey"
   rov_input_arr = gets.chomp!
+  puts "Choose a direction or movement M L or R for Jonny"
+  rov_input_arr2 = gets.chomp!
 
 ##Parsing the individual characters
 
-    rov_input_arr = rov_input_arr.split('')
+  rov_input_arr = rov_input_arr.split('')
+  rov_input_arr2 = rov_input_arr2.split('')
 
 
-#for loop to access each index of rov_input_arr
+#for loop to access each index of rov_input_arr for Rovey
 for i in 0..rov_input_arr.length
   if rov_input_arr[i] == "L" || rov_input_arr[i] == "R"
     puts rovey.rotator(rov_input_arr[i])
@@ -114,6 +136,20 @@ for i in 0..rov_input_arr.length
     puts rovey.move(rov_input_arr[i])
   end #end if statement
 end #end for loop
+
+#for loop to access each index of rov_input_arr for Jonny
+for i in 0..rov_input_arr2.length
+  if rov_input_arr2[i] == "L" || rov_input_arr2[i] == "R"
+    puts jonny.rotator(rov_input_arr2[i])
+  elsif rov_input_arr2[i] == "M"
+    puts jonny.move(rov_input_arr2[i])
+  end #end if statement
+end #end for loop
+
+
+
+
+
 
 end #end class
 
