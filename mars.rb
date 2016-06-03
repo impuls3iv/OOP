@@ -96,18 +96,26 @@ puts rovey.location
 puts rovey.heading
 
 #the loop to get user input to move rovey
-rov_input = nil
-while rov_input != "end"
-  puts "Choose a direction or movement M L or R -> Type \'end\' to quit"
-  rov_input = gets.chomp!
-  if rov_input == "L" || rov_input == "R"
-    puts rovey.rotator(rov_input)
-  elsif rov_input == "M"
-    puts rovey.move(rov_input)
-  else
-      puts "Thats not a command. Type \'end\' to quit"
-  end
-end
+rov_input_arr = []
+while rov_input_arr != "end"
+  puts "Choose a direction or movement M L or R"
+  rov_input_arr = gets.chomp!
+
+##Parsing the individual characters
+
+    rov_input_arr = rov_input_arr.split('')
+
+
+#for loop to access each index of rov_input_arr
+for i in 0..rov_input_arr.length
+  if rov_input_arr[i] == "L" || rov_input_arr[i] == "R"
+    puts rovey.rotator(rov_input_arr[i])
+  elsif rov_input_arr[i] == "M"
+    puts rovey.move(rov_input_arr[i])
+  end #end if statement
+end #end for loop
+
+end #end class
 
 # puts "Map X size"
 # mapX = gets.chomp!.to_i
